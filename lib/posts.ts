@@ -67,6 +67,26 @@ export function getPost(slug: string): Post | undefined {
   return listPosts().find((post) => post.slug === slug);
 }
 
+/** `alpine lakes` → `alpine-lakes` — the URL form of a tag under `/tags/`. */
+export function tagSlug(tag: string): string {
+  return tag.trim().toLowerCase().replace(/\s+/g, "-");
+}
+
+/** Every distinct tag across all posts, with the posts carrying each one, newest first. */
+export function listTags(): { tag: string; slug: string; posts: Post[] }[] {
+  const byTag = new Map<string, Post[]>();
+  for (const post of listPosts()) {
+    for (const tag of post.tags) {
+      const existing = byTag.get(tag) ?? [];
+      existing.push(post);
+      byTag.set(tag, existing);
+    }
+  }
+  return [...byTag.entries()]
+    .map(([tag, posts]) => ({ tag, slug: tagSlug(tag), posts }))
+    .sort((a, b) => a.tag.localeCompare(b.tag));
+}
+
 /** `2026-09-11` → `11 September 2026`, and anything unparseable back to itself. */
 export function formatPublished(published: string): string {
   if (!published) return "";
