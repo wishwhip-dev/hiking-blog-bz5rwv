@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { formatPublished, listTags } from "@/lib/posts";
 
 /**
@@ -15,10 +16,7 @@ export function generateMetadata({ params }: { params: Promise<{ tag: string }> 
 export default async function TagPage({ params }: { params: Promise<{ tag: string }> }) {
   const { tag } = await params;
   const entry = listTags().find((candidate) => candidate.slug === tag);
-  if (!entry) {
-    // Next renders app/not-found.tsx for this.
-    import("next/navigation").then(({ notFound }) => notFound());
-  }
+  if (!entry) notFound();
 
   return (
     <section>
