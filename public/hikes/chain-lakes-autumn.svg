@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img">
+  <defs>
+    <linearGradient id="sky9" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#55636e"/>
+      <stop offset="1" stop-color="#b08a5c"/>
+    </linearGradient>
+    <linearGradient id="water9" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5a7d8a"/>
+      <stop offset="1" stop-color="#354f5c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky9)"/>
+  <path d="M0 230 L170 150 L330 230 L510 140 L670 225 L800 165 L800 330 L0 330 Z" fill="#5d6a72"/>
+  <path d="M0 300 L220 260 L440 310 L660 265 L800 300 L800 500 L0 500 Z" fill="#454f56"/>
+  <rect y="360" width="800" height="140" fill="url(#water9)"/>
+  <path d="M0 360 L220 330 L440 360 L660 330 L800 358 L800 362 L0 362 Z" fill="#3c474e"/>
+  <g stroke="#9db8bf" stroke-width="3" opacity="0.5" fill="none">
+    <path d="M140 400 L300 400"/><path d="M420 440 L600 440"/><path d="M500 380 L640 380"/>
+  </g>
+  <g fill="#c47a2e">
+    <path d="M60 360 L60 310 L44 310 L72 250 L100 310 L84 310 L84 360 Z"/>
+    <path d="M700 360 L700 312 L684 312 L710 255 L736 312 L722 312 L722 360 Z"/>
+  </g>
+  <g fill="#a8562a">
+    <path d="M740 470 L740 400 L720 400 L755 320 L790 400 L768 400 L768 470 Z"/>
+  </g>
+</svg>
