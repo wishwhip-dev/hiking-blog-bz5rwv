@@ -1,0 +1,27 @@
+{
+  "manifestVersion": 1,
+  "template": "blog-nextjs",
+  "capabilities": {
+    "storage": {
+      "kind": "none",
+      "shared": false,
+      "crossDevice": false,
+      "exportImport": false
+    },
+    "auth": {
+      "kind": "none"
+    },
+    "backend": {
+      "kind": "server-runtime"
+    },
+    "instructions": {
+      "briefing": "AGENTS.md",
+      "docs": [
+        "docs/components.md",
+        "docs/charts.md",
+        "docs/motion.md",
+        "docs/graphics.md"
+      ]
+    }
+  }
+}
